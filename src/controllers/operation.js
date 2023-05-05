@@ -8,7 +8,7 @@ const descriptionGET = (req, res) => {
       "Content-Type": "text/html",
     },
   };
-  res.status(200).sendFile("operations.html", options);
+  res.status(200).sendFile("operation.html", options);
 };
 
 const someOperationGET = (req, res) => {

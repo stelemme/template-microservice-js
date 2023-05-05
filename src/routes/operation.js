@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 
-const { descriptionGET, someOperationGET, someOperationPOST } = require("../controllers/operations");
+const { descriptionGET, someOperationGET, someOperationPOST } = require("../controllers/operation");
 
 router.get("/", descriptionGET);
 

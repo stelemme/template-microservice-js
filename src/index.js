@@ -8,11 +8,8 @@ const PORT = 4000
 app.use(express.json())
 app.use(express.static("./public"));
 
-const opsRouter = require("./routes/operations");
-app.use("/ops", opsRouter);
-
-const cnvRouter = require("./routes/conversion");
-app.use("/cnv", cnvRouter);
+const opsRouter = require("./routes/operation");
+app.use("/op", opsRouter);
 
 app.listen(PORT, () => {
   console.log(`Microservice available at: http://localhost:${PORT}/`);
