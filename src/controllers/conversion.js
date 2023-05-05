@@ -8,10 +8,10 @@ const descriptionGET = (req, res) => {
       "Content-Type": "text/html",
     },
   };
-  res.status(200).sendFile("operations.html", options);
+  res.status(200).sendFile("conversion.html", options);
 };
 
-const someOperationGET = (req, res) => {
+const someConversionGET = (req, res) => {
   res.set({
     Server: "Apache/2.4.41 (Unix)",
     "Content-Type": "application/json",
@@ -20,16 +20,16 @@ const someOperationGET = (req, res) => {
 
   res.status(200).json({
     message:
-      "Send data to this endpoint with an HTTP POST request to activate an operation on the data.",
+      "Send data to this endpoint with an HTTP POST request to convert the data to another data type.",
     accepts: "application/json",
     returns: "application/json",
   });
 };
 
-const someOperationPOST = (req, res) => {
+const someConversionPOST = (req, res) => {
   const data = req.body;
 
-  // Here some operation happens on the data, then a response is send. 
+  // Here some conversion happens on the data, then a response is send. 
   // In this template we just return a confirmation that the data is successfully received.
   console.log(data);
 
@@ -44,6 +44,6 @@ const someOperationPOST = (req, res) => {
 
 module.exports = {
   descriptionGET,
-  someOperationGET,
-  someOperationPOST,
+  someConversionGET,
+  someConversionPOST,
 };
