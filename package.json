@@ -1,5 +1,5 @@
 {
-  "name": "template-microservice",
+  "name": "template-microservice-js",
   "version": "1.0.0",
   "description": "",
   "main": "./src/index.js",

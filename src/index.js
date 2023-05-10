@@ -2,14 +2,16 @@ const express = require("express");
 
 const app = express();
 
-//const PORT = process.env.PORT;
-const PORT = 4000
+// The port on which the Microservice runs
+const PORT = process.env.PORT;
 
-app.use(express.json())
-app.use(express.static("./public"));
+// Assigning the routes to the "/" URI
+const homeRouter = require("./routes/home");
+app.use("/", homeRouter);
 
-const opsRouter = require("./routes/operation");
-app.use("/op", opsRouter);
+// Assigning the routes to the "/op" URI
+const opRouter = require("./routes/op");
+app.use("/op", opRouter);
 
 app.listen(PORT, () => {
   console.log(`Microservice available at: http://localhost:${PORT}/`);

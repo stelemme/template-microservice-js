@@ -2,20 +2,20 @@ const path = require("path");
 
 const descriptionGET = (req, res) => {
   var options = {
-    root: path.join(__dirname, "..", "..", "public", "views"),
+    root: path.join(__dirname, "..", "..", "public"),
     headers: {
-      Server: "Apache/2.4.41 (Unix)",
+      Server: "My Node.js Server",
       "Content-Type": "text/html",
     },
   };
-  res.status(200).sendFile("operation.html", options);
+  res.status(200).sendFile("some-operation.html", options);
 };
 
 const someOperationGET = (req, res) => {
   res.set({
-    Server: "Apache/2.4.41 (Unix)",
+    Server: "My Node.js Server",
     "Content-Type": "application/json",
-    "Content-Length": "155",
+    "Content-Length": 155,
   });
 
   res.status(200).json({
@@ -27,19 +27,21 @@ const someOperationGET = (req, res) => {
 };
 
 const someOperationPOST = (req, res) => {
-  const data = req.body;
+  // The data is retreived out of the incomming HTTP POST request.
+  const data = req.body;  
 
-  // Here some operation happens on the data, then a response is send. 
-  // In this template we just return a confirmation that the data is successfully received.
-  console.log(data);
+  // Here some operation is performed on the data.
 
+  // The headers are properly defined.
   res.set({
-    Server: "Apache/2.4.41 (Unix)",
+    "Date": new Date(),
+    "Server": "My Node.js Server",
     "Content-Type": "application/json",
-    "Content-Length": "39",
+    "Content-Length": 39,
   });
 
-  res.status(200).json({ message: "Data received successfully" });
+  // The response is sent back to the requesting party.
+  res.status(200).json({ "message": "Data received successfully" });
 };
 
 module.exports = {
