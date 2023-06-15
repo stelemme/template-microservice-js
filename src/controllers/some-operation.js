@@ -27,12 +27,12 @@ const someOperationGET = (req, res) => {
 };
 
 const someOperationPOST = (req, res) => {
-  // The data is retreived out of the incomming HTTP POST request.
+  // The data is retrieved out of the incoming HTTP POST request.
   const data = req.body;  
 
   // Here some operation is performed on the data.
 
-  // The headers are properly defined.
+  // The headers are defined properly. 
   res.set({
     "Date": new Date(),
     "Server": "My Node.js Server",
