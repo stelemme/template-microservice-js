@@ -15,14 +15,13 @@ const someOperationGET = (req, res) => {
   res.set({
     Server: "My Node.js Server",
     "Content-Type": "application/json",
-    "Content-Length": 155,
+    "Content-Length": 123,
   });
 
   res.status(200).json({
-    message:
-      "Send data to this endpoint with an HTTP POST request to activate an operation on the data.",
-    accepts: "application/json",
-    returns: "application/json",
+    supported_methods: ["GET", "POST"],
+    POST_request_data: "all",
+    POST_response_data: "application/json",
   });
 };
 
